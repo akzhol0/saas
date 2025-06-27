@@ -1,40 +1,38 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { FaLocationDot } from "react-icons/fa6";
+"use client";
+
+import React, { useState } from "react";
+import BurgerMenu from "@/components/header/menu/BurgerMenu";
+import NavLinks from "@/components/header/menu/NavLinks";
+import RequestButton from "@/components/header/menu/RequestButton";
+import ContactInfo from "@/components/header/menu/ContactInfo";
 
 const Navbar = () => {
-  const navbarItems = ["О нас", "Контакты", "Цены", "Проекты", "Отзывы"];
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="flex gap-4 items-center text-lg">
-      <ul className="flex items-center gap-4">
-        {navbarItems.map((item, index) => (
-          <li
-            className="text-lg cursor-pointer duration-300 whitespace-nowrap hover:border-black border-b border-white"
-            key={index}
-          >
-            {item}
-          </li>
-        ))}
-      </ul>
-      <Button
-        variant="default"
-        className="text-lg p-6 cursor-pointer rounded-xl"
-      >
-        Оставить заявку
-      </Button>
-      <div className="flex flex-col items-start text-[15px]">
-        <div className="flex items-center gap-2">
-          <IoLogoWhatsapp />
-          <p className="whitespace-nowrap">+7 (707) 111 78-04</p>
+    <>
+      <BurgerMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <div className="hidden sm:flex gap-4 items-center text-lg">
+        <NavLinks />
+        <div className="flex sm:hidden lg:flex">
+          <RequestButton />
         </div>
-        <div className="flex items-center gap-2">
-          <FaLocationDot />
-          <p>Astana, Kazakhstan</p>
+        <div className="hidden lg:flex">
+          <ContactInfo />
         </div>
       </div>
-    </div>
+      <div
+        className={`absolute ${
+          isMenuOpen ? "top-24 left-0" : "left-[-1000px] top-24"
+        } flex sm:hidden duration-300 w-full h-screen bg-gray-50`}
+      >
+        <div className="w-full flex flex-col items-center gap-4">
+          <NavLinks />
+          <RequestButton />
+          <ContactInfo />
+        </div>
+      </div>
+    </>
   );
 };
 

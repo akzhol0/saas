@@ -14,7 +14,7 @@ const Brand = () => {
     <div>
       <Link href="/">
         <div className={`${dmSerif.className} flex items-center gap-4`}>
-          <div>
+          <div className="min-w-[40px] min-h-[40px]">
             <Image src="/img/brand.png" width={40} height={40} alt="logo" />
           </div>
           <div className="font-semibold text-[42px] text-[#0a0a0a]">

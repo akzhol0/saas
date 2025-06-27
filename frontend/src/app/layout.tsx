@@ -2,6 +2,8 @@ import React from "react";
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 const RubikSans = Rubik({
   subsets: ["latin"],
@@ -21,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${RubikSans.className} antialiased`}>{children}</body>
+      <body className={`${RubikSans.className} antialiased`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
