@@ -7,7 +7,16 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/api/ping", (req, res) => {
-  res.json({ message: "pong" });
+  res.json({
+    status: "ok",
+    message: "Сервер работает",
+    timestamp: new Date().toISOString(),
+    uptimeSeconds: process.uptime(),
+    nodeVersion: process.version,
+    environment: process.env.NODE_ENV || "development",
+    memoryUsage: process.memoryUsage(),
+    platform: process.platform,
+  });
 });
 
 const PORT = process.env.PORT || 3001;

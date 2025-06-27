@@ -1,11 +1,14 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import FancyButton from "@/components/ui/FancyButton";
+import Link from "next/link";
 
 const RequestButton = () => {
   return (
-    <Button variant="default" className="text-lg p-6 cursor-pointer rounded-xl">
-      Оставить заявку
-    </Button>
+    <Link href={"/leave-request"}>
+      <FancyButton variant="primary" className="text-lg p-6 rounded-xl">
+        Оставить заявку
+      </FancyButton>
+    </Link>
   );
 };
 
