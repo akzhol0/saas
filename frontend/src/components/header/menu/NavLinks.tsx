@@ -9,6 +9,10 @@ type NAVBAR_ITEMS_PROPS = {
 const NavLinks = () => {
   const NAVBAR_ITEMS = [
     {
+      title: "Главная",
+      link: "/",
+    },
+    {
       title: "О нас",
       link: "/about-us",
     },
@@ -17,16 +21,8 @@ const NavLinks = () => {
       link: "/contacts",
     },
     {
-      title: "Цены",
-      link: "/prices",
-    },
-    {
       title: "Проекты",
       link: "/projects",
-    },
-    {
-      title: "Отзывы",
-      link: "/feedbacks",
     },
   ];
 

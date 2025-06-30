@@ -1,6 +1,7 @@
 import React from "react";
 import FramerFadeIn from "@/components/ui/FramerFadeIn";
 import FancyButton from "@/components/ui/FancyButton";
+import Link from "next/link";
 
 const ConsultationPage = () => {
   return (
@@ -18,7 +19,9 @@ const ConsultationPage = () => {
       </FramerFadeIn>
       <FramerFadeIn>
         <div className="text-md md:text-2xl">
-          <FancyButton>Получить консультацию</FancyButton>
+          <Link href={"/contacts"}>
+            <FancyButton>Получить консультацию</FancyButton>
+          </Link>
         </div>
       </FramerFadeIn>
     </div>

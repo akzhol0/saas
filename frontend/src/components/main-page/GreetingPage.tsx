@@ -2,10 +2,11 @@ import React from "react";
 import FramerFadeIn from "@/components/ui/FramerFadeIn";
 import CountUp from "@/blocks/TextAnimations/CountUp/CountUp";
 import FancyButton from "@/components/ui/FancyButton";
+import Link from "next/link";
 
 const GreetingPage = () => {
   return (
-    <div className="container h-auto lg:h-[600px] px-4 mb-4">
+    <div className="container h-auto lg:h-[700px] px-4 mb-4">
       <div className="h-full flex flex-col lg:flex-row gap-4 items-start justify-start lg:items-center lg:justify-between">
         <div className="max-w-[900px]">
           <FramerFadeIn>
@@ -28,15 +29,17 @@ const GreetingPage = () => {
               from={0}
               to={68}
               direction="up"
-              duration={3}
+              duration={1}
               className="text-4xl font-bold"
             />
-            <FancyButton
-              className="text-xl p-6 cursor-pointer whitespace-nowrap"
-              variant="outline-primary"
-            >
-              Стать клиентом
-            </FancyButton>
+            <Link href={"/contacts"}>
+              <FancyButton
+                className="text-xl p-6 cursor-pointer whitespace-nowrap"
+                variant="outline-primary"
+              >
+                Стать клиентом
+              </FancyButton>
+            </Link>
           </div>
         </FramerFadeIn>
       </div>
